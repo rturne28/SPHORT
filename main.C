@@ -1,7 +1,10 @@
-#include <iostream>
+#include "Mesh/Mesh.h"
 
 int main(int argc, char const *argv[])
 {
-  std::cout << "and here... we... GO" << std::endl;
+  const double a = 3.3;
+  const double b = 5.5;
+  Mesh mesh;
+  mesh.cell_solve(a,b);
   return 0;
 }

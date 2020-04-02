@@ -2,7 +2,6 @@
 #define INPUT_H
 
 #include <fstream>
-#include <iostream>
 
 void read_input(std::string filename);
 

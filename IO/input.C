@@ -1,4 +1,5 @@
 #include "input.h"
+#include "../Exceptions/Exception.h"//Dont like this, need a ROOT path or something
 
 void read_input(std::string filename)
 {
@@ -7,14 +8,9 @@ void read_input(std::string filename)
   {
     if (!inf)
       throw "Input file could not be opened for reading";
-    // std::cerr << "Input file " << filename << " could not be opened for reading."
-    //           << std::endl;
   }
   catch (const char* exception)
   {
-    std::cerr << exception << std::endl;
+    handle_exception(exception);
   }
 }
-
-// need some way of terminating the program without a return
-// if the user input file doesnt exist

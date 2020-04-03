@@ -1,3 +1,9 @@
-radius     5
-Sn         8
-Anisotropy 4
+// As of 4/3, 1) commented lines are ignored,
+// 2) variables are only tied to position in this file, not the variable names,
+// 3) must only have characters that will be converted to usable types on the
+// right side of the colon,
+radius     :5
+angles     :8
+anisotropy :4
+BC         :vac
+DSA        :False

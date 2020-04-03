@@ -1,5 +1,5 @@
 #include "Mesh/Mesh.h"
-#include "IO/input.h"
+#include "IO/Input.h"
 #include "Exceptions/Exception.h"
 
 #include <iostream>
@@ -16,7 +16,8 @@ int main(int argc, char const *argv[])
   {
     handle_exception(exception);
   }
-  read_input(argv[1]);
+  std::vector<std::string> parameters;
+  read_input(argv[1], parameters);
   const double a = 3.3;
   const double b = 5.5;
   Mesh mesh;

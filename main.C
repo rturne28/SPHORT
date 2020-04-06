@@ -16,8 +16,10 @@ int main(int argc, char const *argv[])
   {
     handle_exception(exception);
   }
-  std::vector<std::string> parameters;
-  read_input(argv[1], parameters);
+  std::vector<std::string> input_params;
+  read_input(argv[1], input_params);
+
+
   const double a = 3.3;
   const double b = 5.5;
   Mesh mesh;

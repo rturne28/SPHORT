@@ -2,8 +2,8 @@
 // 2) variables are only tied to position in this file, not the variable names,
 // 3) must only have characters that will be converted to usable types on the
 // right side of the colon,
-radius     :5
+radius     :5.0
 angles     :8
 anisotropy :4
 BC         :vac
-DSA        :False
+DSA        :True

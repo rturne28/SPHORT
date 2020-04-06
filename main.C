@@ -1,6 +1,7 @@
 #include "Mesh/Mesh.h"
 #include "IO/Input.h"
 #include "Exceptions/Exception.h"
+#include "Containers/InputContainer.h"
 
 #include <iostream>
 // g++ main.C [all .C files] -o sphort.exe
@@ -18,12 +19,13 @@ int main(int argc, char const *argv[])
   }
   std::vector<std::string> input_params;
   read_input(argv[1], input_params);
+  InputContainer container{ input_params };
+  std::cout << container._DSA << '\n';
 
-
-  const double a = 3.3;
-  const double b = 5.5;
-  Mesh mesh;
-  mesh.cell_solve(a,b);
+  // const double a = 3.3;
+  // const double b = 5.5;
+  // Mesh mesh;
+  // mesh.cell_solve(a,b);
 
   return EXIT_SUCCESS;
 }

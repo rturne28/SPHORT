@@ -1,4 +1,4 @@
-#include "Mesh/Mesh.h"
+#include "Cell/Cell.h"
 #include "IO/Input.h"
 #include "Exceptions/Exception.h"
 #include "Containers/InputContainer.h"
@@ -24,8 +24,8 @@ int main(int argc, char const *argv[])
 
   // const double a = 3.3;
   // const double b = 5.5;
-  // Mesh mesh;
-  // mesh.cell_solve(a,b);
+  // Cell cell;
+  // cell.cell_solve(a,b);
 
   return EXIT_SUCCESS;
 }

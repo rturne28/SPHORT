@@ -1,5 +1,4 @@
 #include "Input.h"
-#include "../Exceptions/Exception.h"//Dont like this, need a ROOT path or something
 
 void read_input(std::string filename, std::vector<std::string>& param_list)
 {

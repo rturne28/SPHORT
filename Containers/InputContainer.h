@@ -6,7 +6,7 @@
 
 struct InputContainer
 {
-  const double      _radius;
+  const float       _radius;
   const int         _cells;
   const int         _angles;
   const int         _anisotropy;

@@ -3,7 +3,7 @@
 
 class SpatialMesh
 {
-  const double _radius;
+  const float _radius;
   const int    _cells;
 
 public:

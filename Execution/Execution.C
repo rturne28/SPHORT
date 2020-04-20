@@ -6,6 +6,7 @@ void execute(std::string filename)
   read_input(filename, input_params);
   InputContainer container{ input_params };
   SpatialMesh mesh{ container._radius, container._cells };
+  // Cell cell;
   // mesh.create_mesh
   // mesh will be a container of the cells with each cell
   //  having geometric info + boundary info. The mesh object will

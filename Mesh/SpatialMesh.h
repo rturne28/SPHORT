@@ -7,13 +7,13 @@ class SpatialMesh
   const int    _cells;
 
 public:
-  SpatialMesh(const double& radius, const int& cells)
+  SpatialMesh(const float& radius, const int& cells)
   : _radius{ radius },
     _cells{ cells }
   {
   }
 
-  void fillCellList();
+  // void fillCellList();
 };
 
 // Function that takes radius and # of cells data and creates a cell object

@@ -14,7 +14,7 @@ struct InputContainer
   const bool        _DSA;
 
   InputContainer(std::vector<std::string>& param_list)
-  : _radius{ ::atof(param_list[0].c_str()) },
+  : _radius{ std::stof(param_list[0].c_str()) },
     _cells{ ::atoi(param_list[1].c_str()) },
     _angles{ ::atoi(param_list[2].c_str()) },
     _anisotropy{ ::atoi(param_list[3].c_str()) },

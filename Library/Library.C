@@ -1,16 +1,26 @@
 #include "Library.h"
 
-void linspace(std::vector<double>& radii_vals, const float& radius,
-              const int& cells) // careful, rad_vals not const
+double linspace(const float& radius, const int& cells)
 {
-  radii_vals has length cells+1
-  first value is manually 0
-  last value is manually radius
+  double radii_vals[cells+1] = {};
+  // radii_vals has length cells+1
+  radii_vals[0] = 0.0;
   const double step = radius / cells;
-  radii_vals.push_back(0.0);
-  for (int i = 1; i < cells; ++i)
-    radii_vals.push_back(i*step); //may need to preserve double here
-  radii_vals.push_back(radius);
+  for (int i = 1; i < cells+1; ++i)
+    radii_vals[i] = (i*step); //may need to preserve double here
+  return radii_vals;
   // need to rewrite with an array or give the vector
   // correct length up front then just index to assign values
 }
+// call with double& radvals = linspace(radius, cells);
+// I think linspace returns a copy of radii_vals (not ideal),
+// but radvals will be a reference to this, so it wont be copied
+// again in the assignment, right???
+
+
+// SCRAPPING THIS FOR NOW: need to integrate the linspace Function
+// to go ahead and assign _re and _rw to each cell when creating
+// the cell objects. I know how to write the linspace function, I just
+// dont want to deal with the copying of the array/ passing an
+// empty array to linspace just to turn around and loop through
+// it again.

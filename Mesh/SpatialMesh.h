@@ -3,18 +3,23 @@
 
 #include "Cell.h"
 
+#include <vector>
+
 class SpatialMesh
 {
-  const double _radius;
-  const int    _cells;
-  // const Cell _tainer[_cells] = {};
+  const double      _radius;
+  const int         _cells;
+  std::vector<Cell*> _mesh; // not sure about the poiner here yet
 
 public:
   SpatialMesh(const double& radius, const int& cells)
-  : _radius{ radius },
-    _cells{ cells }
+  : _radius{ radius }, _cells{ cells }, _mesh(cells)
   {
   }
+
+  // void printer();
+
+  // void sizeMesh(std::vector<Cell>& mesh);
 
   void fillMesh();
 };

@@ -1,0 +1,19 @@
+4/10
+I believe references (and particularly const references) are used so widely in C++ because they prevent assignment by copy.
+Aka in Python, by default I think variables are assigned by reference, not by copy (I could still be wrong on this).
+Anyways, I think saying something like
+int b = 3;
+const int& c = b;
+allows c to be a reference to the memory location where b is held instead of copying the value of b into c.
+The const just prevents alterations to c, which would alter b as well. Right???
+
+4/22
+I need a container for the cell objects in the mesh.
+Right now, the easiest path forward seems to be adding a memeber variable that is a vector of Cell objects but is housed in SpatialMesh.
+I also know at run time that I want the vector to be <cells> long, so I want to allocate that much space to the vector isnt resized many times.
+However, I think this requires a default constructor for SpatialMesh, but I need to provide radius and #cell parameters.
+Soln: I will leave it unsized upon class initialization, but I can write a member function that resizes it I guess. Not sure if this is bad practice or not...
+NOTE: Dont call the operator[] to index a vector if that index is out of range, as this causes undefined behavior
+NOTE: sizing a vector upon initialization creates objects of the assigned type in each location.
+AKA, if I have std::vector<int> vec(5) (the syntax is a little different if the vector is a member variable of a class), then this vector is actually 5 integers that can be indexed.
+I think this is why when doing something like std::vector<CustomClass>, a default variable must be called in order to instantiate a class object in each element of the vector.

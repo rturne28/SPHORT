@@ -6,6 +6,7 @@ void execute(std::string filename)
   read_input(filename, input_params);
   InputContainer container{ input_params };
   SpatialMesh mesh{ container._radius, container._cells };
+  mesh.fillMesh();
   // double radvals[container]
   // double radvals = linspace(container._radius, container._cells);
   // Cell cell;

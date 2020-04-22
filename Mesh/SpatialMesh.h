@@ -1,19 +1,22 @@
 #ifndef SPATIAL_MESH_H
 #define SPATIAL_MESH_H
 
+#include "Cell.h"
+
 class SpatialMesh
 {
-  const float _radius;
+  const double _radius;
   const int    _cells;
+  // const Cell _tainer[_cells] = {};
 
 public:
-  SpatialMesh(const float& radius, const int& cells)
+  SpatialMesh(const double& radius, const int& cells)
   : _radius{ radius },
     _cells{ cells }
   {
   }
 
-  // void fillCellList();
+  void fillMesh();
 };
 
 // Function that takes radius and # of cells data and creates a cell object

@@ -23,7 +23,7 @@ class Cell
   bool         _out_cell;
 
 public:
-  Cell() {}
+  Cell() {} // default constructor needed for initializing mesh object
 
   Cell(double& r_west, double& r_east)
   : _rw{ r_west }, _re{ r_east }, pi{ 3.141592653589793 }, _Aw{ 4*pi*pow(_rw, 2.0) },
@@ -31,8 +31,11 @@ public:
     _origin_cell{ false }, _out_cell{ false }
   {
   }
-  // accessors here?
-  // void cell_solve(const double& r_w, const double& r_e) const;
+
+  void setR_West(double r_west) { _rw = r_west; }
+  void setR_East(double r_east) { _re = r_east; }
+  double returnR_West_copy() { return _rw; }
+  double returnR_East_copy() { return _re; }
 };
 
 #endif

@@ -16,4 +16,4 @@ Soln: I will leave it unsized upon class initialization, but I can write a membe
 NOTE: Dont call the operator[] to index a vector if that index is out of range, as this causes undefined behavior
 NOTE: sizing a vector upon initialization creates objects of the assigned type in each location.
 AKA, if I have std::vector<int> vec(5) (the syntax is a little different if the vector is a member variable of a class), then this vector is actually 5 integers that can be indexed.
-I think this is why when doing something like std::vector<CustomClass>, a default variable must be called in order to instantiate a class object in each element of the vector.
+I think this is why when doing something like std::vector<CustomClass>, a default constructor must be called in order to instantiate a class object in each element of the vector.

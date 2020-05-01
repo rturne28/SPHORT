@@ -1,6 +1,6 @@
 #include "SpatialMesh.h"
 
-#include <iostream>
+// #include <iostream>
 
 // void SpatialMesh::printer()
 // {
@@ -17,14 +17,18 @@
 //   //might need default constructor for cell
 // }
 
-void SpatialMesh::fillMesh()
+void SpatialMesh::detailMesh()
 {
   const double step = _radius / _cells;
-  for (int i = 0; i < _cells; ++i)
+  int counter = 0;
+  std::vector<Cell>::iterator cell;
+  for (cell = _mesh.begin(); cell != _mesh.end(); ++cell, ++counter)
   {
-    double r_west = i*step;
-    double r_east = (i+1)*step;
-    // Cell cell(r_west, r_east);
-    // insert it into container of cell objects
+    cell->setR_West(counter*step);
+    cell->setR_East((counter+1)*step);
+    // std::cout << "cell " << counter << " _re = "
+    // << cell->returnR_East_copy() << "\n";
   }
+  
+
 }

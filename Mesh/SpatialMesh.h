@@ -9,7 +9,7 @@ class SpatialMesh
 {
   const double      _radius;
   const int         _cells;
-  std::vector<Cell*> _mesh; // not sure about the poiner here yet
+  std::vector<Cell> _mesh; // not sure about the poiner here yet
 
 public:
   SpatialMesh(const double& radius, const int& cells)
@@ -21,7 +21,7 @@ public:
 
   // void sizeMesh(std::vector<Cell>& mesh);
 
-  void fillMesh();
+  void detailMesh();
 };
 
 // Function that takes radius and # of cells data and creates a cell object

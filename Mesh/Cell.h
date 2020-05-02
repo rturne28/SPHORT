@@ -5,22 +5,14 @@
 
 class Cell
 {
-  // const double _rw;
-  // const double _re;
-  // const double  pi;
-  // const double _Aw;
-  // const double _Ae;
-  // const double _vol;
-  // bool         _origin_cell;
-  // bool         _out_cell;
   double _rw;
   double _re;
-  double  pi;
+  double  pi{ 3.141592653589793 };
   double _Aw;
   double _Ae;
   double _vol;
-  bool         _origin_cell;
-  bool         _out_cell;
+  bool   _origin_cell{ false };
+  bool   _out_cell{ false };
 
 public:
   Cell() {} // default constructor needed for initializing mesh object
@@ -34,8 +26,14 @@ public:
 
   void setR_West(double r_west) { _rw = r_west; }
   void setR_East(double r_east) { _re = r_east; }
+  void setOrigin_Cell(bool origin) { _origin_cell = origin; }
+  void setOut_Cell(bool out) { _out_cell = out; }
+  void setGeom();
+
   double returnR_West_copy() { return _rw; }
   double returnR_East_copy() { return _re; }
+  double returnVol_copy() { return _vol; }
+  double returnOut_copy() { return _out_cell; }
 };
 
 #endif

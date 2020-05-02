@@ -1,6 +1,6 @@
 #include "SpatialMesh.h"
 
-// #include <iostream>
+#include <iostream>
 
 // void SpatialMesh::printer()
 // {
@@ -26,9 +26,13 @@ void SpatialMesh::detailMesh()
   {
     cell->setR_West(counter*step);
     cell->setR_East((counter+1)*step);
-    // std::cout << "cell " << counter << " _re = "
-    // << cell->returnR_East_copy() << "\n";
+    cell->setGeom();
+    // std::cout << "cell " << counter << " _vol = "
+    // << cell->returnVol_copy() << "\n";
   }
-  
+  _mesh.front().setOrigin_Cell(true);
+  _mesh.back().setOut_Cell(true);
+  // std::cout << "cell " << counter << " _out_cell = "
+  // << _mesh.back().returnOut_copy() << "\n";
 
 }
